@@ -14,7 +14,7 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Hello, world!")
-            Text("서연 브랜치 테스트")
+            Text("민근 브랜치 테스트")
         }
         .padding()
     }
