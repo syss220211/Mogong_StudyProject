@@ -5,7 +5,7 @@
 //  Created by 박서연 on 2023/06/19.
 //
 
-// 로그인 항목
+// 로그인 창
 
 import SwiftUI
 
@@ -23,6 +23,7 @@ struct ContentView: View {
                 TextField("Email", text: $email)
                     .textFieldStyle(.roundedBorder)
                     .keyboardType(.emailAddress)
+
                 SecureField("Password", text: $password)
                     .textFieldStyle(.roundedBorder)
                 
@@ -30,12 +31,16 @@ struct ContentView: View {
                     Text("Agree to terms and conditions")
                         .font(.subheadline)
                 }
+                .padding()
                 
-                Button("Sign in") {
+                Button {
                     print("버튼이 눌렸음")
-                }.disabled(email.isEmpty || password.isEmpty || !toggling)
+                } label: {
+                    Text("Sign in")
+                        .frame(width: 350, height: 30)
+                }
+                .disabled(email.isEmpty || password.isEmpty || !toggling)
                 .buttonStyle(.borderedProminent)
-                .frame(width: 350, height: 140)
                 
                 .navigationTitle("Log in")
             }
