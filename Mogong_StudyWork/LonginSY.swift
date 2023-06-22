@@ -63,7 +63,7 @@ struct LonginSY: View {
             
             // 토글
             Toggle("Agree to ierms and conditions", isOn: $isLogin)
-                .frame(width: 300, alignment: .trailing) // 정렬 적용 안 되는듯..
+                .frame(width: 300, alignment: .trailing) // 정렬 확인 필요
                 .padding(.bottom, 50)
 
             // 버튼
