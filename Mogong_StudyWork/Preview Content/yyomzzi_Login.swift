@@ -24,7 +24,6 @@ struct yyomzzi_Login: View {
     //요기까지 변수끝. @State 를 통해 변화하는 값을 받아서 다시 뷰를 그려주기
     
     var body: some View {
-        
         VStack {
             Spacer()
             HStack {
@@ -48,11 +47,13 @@ struct yyomzzi_Login: View {
                 // 이메일로 로그인하는 입력 텍스트필드. id 값을 받아서 넣습니당.
                 TextField("  Enter your E-mail", text: $id)
                     .frame(height: 60)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                     .autocorrectionDisabled(true)
                     .background(Color.clear)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.blue, lineWidth: 1)
+                            .stroke(Color.blue, lineWidth: 2)
                     )
                     .padding(.bottom, 20)
                 //자동완성 해제
@@ -69,11 +70,13 @@ struct yyomzzi_Login: View {
                         TextField("  Enter your password", text: $password)
                             .frame(height: 60)
                             .background(Color.clear)
+                            .autocapitalization(.none)
                         
                     } else {
                         SecureField("  Enter your password", text: $password)
                             .frame(height: 60)
                             .background(Color.clear)
+                            .autocapitalization(.none)
                     }
                     
                     
@@ -86,10 +89,11 @@ struct yyomzzi_Login: View {
                         Image(systemName: "eye")
                             .foregroundColor(.secondary)
                     }
+                    Spacer()
                 }
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.blue, lineWidth: 1)
+                        .stroke(Color.blue, lineWidth: 2)
                 )
             }
             
